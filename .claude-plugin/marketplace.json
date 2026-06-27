@@ -1,0 +1,15 @@
+{
+  "name": "econ-writing-agents",
+  "owner": {
+    "name": "adapted from andrehuang/academic-writing-agents for empirical economics",
+    "email": ""
+  },
+  "plugins": [
+    {
+      "name": "econ-writing-agents",
+      "description": "14 specialist agents and 35 principles for empirical-economics writing review, identification auditing, regression-table auditing, drafting, polishing, bibliography hygiene, and literature surveys, coordinated by a multi-agent orchestrator.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

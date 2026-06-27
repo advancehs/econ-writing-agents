@@ -1,0 +1,24 @@
+{
+  "name": "econ-writing-agents",
+  "version": "3.0.0",
+  "description": "Multi-agent orchestrator for empirical-economics writing: 14 specialist agents and 35 principles (incl. causal identification and regression-table auditing) for review, drafting, polishing, table/figure work, bibliography hygiene, and literature surveys (RePEc/NBER/SSRN). Adapted from andrehuang/academic-writing-agents.",
+  "author": {
+    "name": "adapted from Haiwen Huang's academic-writing-agents for empirical economics",
+    "url": "https://github.com/andrehuang/academic-writing-agents"
+  },
+  "repository": "https://github.com/andrehuang/academic-writing-agents",
+  "license": "MIT",
+  "keywords": [
+    "econometrics",
+    "empirical-economics",
+    "causal-inference",
+    "regression",
+    "difference-in-differences",
+    "instrumental-variables",
+    "event-study",
+    "stata",
+    "multi-agent",
+    "orchestrator",
+    "latex"
+  ]
+}
