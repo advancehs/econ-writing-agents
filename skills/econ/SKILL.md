@@ -30,7 +30,7 @@ This skill activates in two ways:
 
 Before deploying any agents:
 
-1. Read `econ-writing.md` (in the same directory as this skill) for the **35 writing principles** organized in 7 categories (A. Structure & Narrative, B. Prose & Style, C. Econometric Equations, D. Tables & Figures, E. Citations & Bibliography, F. Process & Meta, **G. Empirical Identification & Regression**).
+1. Read `econ-writing.md` (in the same directory as this skill) for the **43 writing principles** organized in 8 categories (A. Structure & Narrative, B. Prose & Style, C. Econometric Equations, D. Tables & Figures, E. Citations & Bibliography, F. Process & Meta, **G. Empirical Identification & Regression**, **H. Paragraph-Level Flow & Self-Audit**).
 2. **Read the project-level `.claude/CLAUDE.md`** if it exists in the working directory. Empirical projects carry hard rules that override general guidance: fixed-effects structures (e.g., country×year vs partner×year), direction constraints on headline coefficients, pre-trend / binning rules, the Stata and Python environment paths, and the data-construction→estimation workflow. Surface these rules to every agent that touches regressions or tables. Category G principles are the default; the project CLAUDE.md is the source of truth for this specific paper.
 3. Check for project-level agents: Glob for `.claude/agents/*.md` in the working directory. If found, read their frontmatter (name, description, tools) and add them to your roster. Present project agents in your deployment plan.
 4. Include relevant context (principle categories, project regression rules, variable definitions) in each agent's deployment prompt. **Do not** instruct agents to read plugin-internal absolute paths — paste the relevant principle excerpts and project rules into the prompt directly.
@@ -209,6 +209,8 @@ For "prepare for submission" or "is this ready to submit?", run a comprehensive 
    - [ ] Negation-contrast audit passed (F2)
    - [ ] Abstract states the nugget + headline magnitude (A7)
    - [ ] All named datasets/methods cited (E1, E2)
+   - [ ] Claim–evidence map complete for the abstract and every headline claim — no outstanding "needs evidence" (H7)
+   - [ ] Adversarial self-review (H8) run across all five economics dimensions (contribution / writing clarity / identification strength / robustness completeness / design soundness), every item pass or explicitly resolved
 
 ## Synthesis Output Format
 

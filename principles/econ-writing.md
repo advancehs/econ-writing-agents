@@ -2,7 +2,7 @@
 
 Distilled from empirical economics practice (causal inference, panel data, applied microeconomics, international trade & political economy), thesis/paper supervision, and Michael Black's "Writing a Good Scientific Paper".
 Canonical reference — all agents and workflows consult this file.
-Organized into 7 categories that map to agent specializations.
+Organized into 8 categories that map to agent specializations.
 
 ---
 
@@ -220,3 +220,88 @@ Every regression table must report: the key coefficient(s) with standard errors,
 The sign, magnitude, and significance of every coefficient you discuss in prose must match the table exactly. Report standard errors or p-values alongside. If a coefficient is insignificant, say so — do not narrate its sign as if it were significant, and do not narrate a significant coefficient as "suggestive". Direction constraints the author has committed to (e.g., the headline effect must be positive and significant; no post-period year may be significantly negative) must hold in both table and text.
 
 **Common violations**: Prose calls a coefficient "positive and significant" when it is insignificant or negative in the table; magnitude rounded inconsistently between text and table; a direction constraint violated silently (e.g., a post-period year significantly negative reported without flagging the conflict); treating an insignificant distortion coefficient as if it carried the same weight as the significant headline coefficient.
+
+---
+
+## H. Paragraph-Level Flow & Self-Audit
+
+*Primary agents: writing-reviewer, prose-polisher, section-drafter, logic-reviewer*
+
+> Adapted from [Master-cai/Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills), which distills Peng Sida's open research-writing notes. These are cross-disciplinary, paragraph-level tools.
+
+Categories A–G govern the manuscript (A), the sentence (B5), and the empirical claim (G). This category fills the **paragraph** layer — the unit a reader actually traverses — with portable flow and self-audit tools.
+
+### H1. One Message Per Paragraph
+Each paragraph carries exactly one claim, finding, or step of the argument. If a paragraph does two things (e.g., reports a coefficient *and* launches a mechanism story), split it. A reader should be able to state each paragraph's message in one sentence after reading it.
+
+**Common violations**: Results paragraphs that open with the baseline coefficient, pivot mid-paragraph to heterogeneity, then close on a robustness check — three messages fused; literature paragraphs that interleave "what we do" with "what others did" instead of dedicating one paragraph to each.
+
+### H2. Topic-Sentence-First (Paragraph Level)
+The first sentence of each paragraph states the paragraph's message; the rest supplies evidence, mechanism, or qualification. This is the paragraph-level analogue of A5 (which governs sections). Do not bury the point in the middle or defer it to the end with no forewarning.
+
+**Common violations**: Paragraphs that build context for three sentences before stating the finding; topic sentences that are pure transition ("Another important result is...") carrying no content; the message hidden in the final sentence.
+
+### H3. Self-Contained Terminology
+Make every key noun readable without hidden context: define a new term at first use and use it consistently (do not rotate synonyms — see A1). A reader landing mid-section should not need to scroll up to decode a term.
+
+**Common violations**: "the exposure variable" used before "BRI_intl" is defined; "treated units" introduced without saying treated by what and when; an acronym (e.g., "GVC") used pages before its expansion.
+
+### H4. Reverse Outlining
+After drafting a section, run a reverse outline to stress-test its logic: (1) write the section's thesis/nugget (A7); (2) write each paragraph's topic sentence (H2); (3) under each, note the evidence/estimation it offers; (4) check every topic sentence maps to the thesis and every evidence point maps to its topic sentence; (5) revise or delete any paragraph that fails the mapping. If the reverse outline is hard to write, the thesis or topic sentences are unclear.
+
+**Common violations**: A results section whose reverse outline reveals two paragraphs with the same topic (merge) or a topic sentence with no supporting coefficient (cut or re-evidence); identification sections where a paragraph's "evidence" is actually a method choice with no identifying claim attached.
+
+### H5. Reader-Perspective Self-Check
+Read the draft as an uninformed but expert reader. For each paragraph ask: Would a peer outside this project understand the vocabulary? Does the paragraph visibly connect back to the identification strategy or the nugget? Is the take-away obvious to someone who did not run the regressions?
+
+**Common violations**: Paragraphs intelligible only to the author (who knows the data); a discussion that assumes the reader recalls the FE structure from three pages back; take-aways that are implied but never stated.
+
+### H6. Transition Lexicon
+Bridge every adjacent paragraph and every sentence pair with an explicit relational marker (per A2). Pick the marker that matches the logic, not a generic "Moreover". Reference set:
+
+- Causal / mechanism: because, so, therefore, thus, hence, consequently, as a result
+- Contrast / exception: however, but, although, yet, in contrast, nevertheless, instead, on the other hand
+- Comparison / extension: similarly, likewise, in the same way, also
+- Illustration: for example, for instance, such as, in particular
+- Refinement / elaboration: specifically, that is, in other words, more precisely
+- Sequence / temporal: first, then, next, finally, before, after, meanwhile
+
+**Common violations**: Adjacent paragraphs joined only by thematic proximity with no marker; "Moreover"/"Furthermore"/"Additionally" repeated in sequence (also an AI-writing tell, B8); causal markers ("therefore") used where the identification supports only association (violates G3).
+
+### H7. Claim–Evidence Mapping
+Treat claim–evidence alignment as a hard constraint (the empirical cousin of A5/G5). For each major claim — especially in the abstract and introduction — produce an explicit map: `Claim: <statement> | Evidence: <table/figure/spec/estimate> | Status: supported | needs evidence | overstated`. If a claim's status is "needs evidence", add the evidence or weaken/remove the claim (per F1, strategically).
+
+**Common violations**: An abstract claim ("BRI exposure redirected trade") with no table pointed to; an introduction that asserts a mechanism no section establishes; a "significant" qualifier in the abstract attached to a coefficient that is insignificant in the table (G5).
+
+### H8. Adversarial Self-Review (Economics-Adapted Five Dimensions)
+Near submission, read the manuscript as a skeptical referee and answer every question below with explicit evidence, marking each `pass | needs revision | needs new estimation`. Repeat until no major reject-risk remains. These are *self-audit prompts* — questions to interrogate the draft — complementing category G, which states the *principles* the draft must satisfy.
+
+**1. Contribution**
+
+- What new economic knowledge does the paper deliver (a causal effect, a mechanism, a new dataset or lens)?
+- Is the identifying variation or the finding genuinely non-obvious, not a predictable re-estimation?
+- Can the nugget (A7) be stated in one sentence with its magnitude?
+
+**2. Writing Clarity**
+
+- Could a knowledgeable reader replicate the estimation from the text alone (specification, FE, clustering, sample)?
+- Does every section follow the Goal–Problem–Solution rhythm (A6) and state the identifying claim before coefficients (G1)?
+- Are terms, notation, and magnitude rounding consistent across text, equation, and table (A1, C3, G5)?
+
+**3. Identification Strength**
+
+- Is the identifying assumption (parallel trends / exclusion restriction / continuity) stated and *defended*, not merely assumed?
+- Are the headline coefficients economically meaningful, not just statistically marginal?
+- Does causal language match what the design delivers (G3)?
+
+**4. Robustness Completeness**
+
+- Are the key design choices ablated (alternative FE, clustering, control sets, sample windows, placebo / pre-treatment)?
+- Are all relevant strong estimators (e.g., Callaway-Sant'Anna, de Chaisemartin-D'Haultfœuille) included under fair settings?
+- Are pre-trend tests reported at the joint *and* individual-year level (G2)?
+
+**5. Design Soundness**
+
+- Is the empirical setting realistic for the economic claim being made?
+- Are there hidden technical defects or untenable assumptions (e.g., binning that skips early years, post-period binning, sample-end truncation)?
+- Is the result robust without per-specification tuning, and do the design's benefits outweigh its limitations (F1)?

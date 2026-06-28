@@ -14,7 +14,7 @@ Informed by Michael Black's "Writing a Good Scientific Paper", real empirical-pa
 
 - **Parallel expert review.** Multiple specialized agents review simultaneously — an identification reviewer, a regression-table auditor, a technical reviewer, a writing reviewer, and a bibliography auditor all reading at once.
 - **Review-then-act.** Always diagnose before fixing. The reviewer identifies issues; the polisher implements fixes. Never blindly edit.
-- **35 codified principles** in 7 categories: Structure & Narrative, Prose & Style, Econometric Equations, Tables & Figures, Citations & Bibliography, Process & Meta, and **Empirical Identification & Regression**.
+- **43 codified principles** in 8 categories: Structure & Narrative, Prose & Style, Econometric Equations, Tables & Figures, Citations & Bibliography, Process & Meta, Empirical Identification & Regression, and **Paragraph-Level Flow & Self-Audit**.
 - **Empirics are verifiable.** When an agent makes a claim about a coefficient, a p-value, or a sample size, the orchestrator checks it against the table / `.do` output before relaying it. Two agents never disagree about a number.
 - **Human-in-the-loop.** Agents propose; the author decides. The plugin presents a prioritized plan and you choose what to act on. The mechanics (Stata, Python, LaTeX) run themselves.
 - **Project CLAUDE.md is the source of truth.** General principles are defaults; your project's `.claude/CLAUDE.md` (FE structures, coefficient-direction constraints, binning rules) overrides them for this paper.
@@ -84,9 +84,9 @@ You can also invoke it manually: `/econ audit Table 8`.
 | `section-drafter` | Drafts identification strategy, results discussion, robustness, captions, abstracts |
 | `latex-figure-specialist` | Creates/adjusts regression tables (booktabs/threeparttable/esttab), event-study & coefficient plots |
 
-### 35 Principles
+### 43 Principles
 
-Organized into 7 categories:
+Organized into 8 categories:
 
 **A. Structure & Narrative** — A1 Recursive Consistency, A2 Logical Chaining, A3 Definition Order, A4 Paragraph Closers, A5 Claim-First, A6 GPS Rhythm, A7 The Nugget
 
@@ -101,6 +101,8 @@ Organized into 7 categories:
 **F. Process & Meta** — F1 Strategic Limitations, F2 Negation-Contrast Audit
 
 **G. Empirical Identification & Regression** — G1 Identification Strategy First, G2 Parallel Trends & Pre-trends, G3 Calibrated Causal Language, G4 Regression Table Completeness, G5 Coefficient–Narrative Consistency
+
+**H. Paragraph-Level Flow & Self-Audit** — H1 One Message/Paragraph, H2 Topic-Sentence-First, H3 Self-Contained Terminology, H4 Reverse Outlining, H5 Reader-Perspective, H6 Transition Lexicon, H7 Claim–Evidence Mapping, H8 Adversarial Self-Review
 
 ## Usage
 
