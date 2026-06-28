@@ -130,6 +130,48 @@ Prepare this paper for submission — full review pipeline
 
 You can also invoke the skill explicitly with `/econ <task>` if auto-triggering does not activate.
 
+## Submission Readiness Pipeline（投稿准备工作流）
+
+**`prepare for submission` 不是 agent，而是一个由 `/econ` 编排的投稿前总审工作流**（Submission Readiness Pipeline）——把"多专家并行审查 + 修复 + 验证 + 就绪清单"一次跑完。对应 `/econ prepare this paper for submission`。
+
+### 三阶段
+
+**Stage 1 — 并行审查**（7 个 agent 同时）：
+
+| Agent | 审查重点 |
+|---|---|
+| `identification-reviewer` | 识别策略、平行趋势、IV 排他性、因果语言 |
+| `regression-table-auditor` | 系数方向/显著性 vs 叙事、FE/cluster/N/星号、表-文一致 |
+| `technical-reviewer` | 计量设定、稳健性、引用 |
+| `consistency-checker` | 术语、交叉引用、表-文-注一致 |
+| `writing-reviewer` | 文字清晰度、因果语言校准 |
+| `bibliography-auditor` | `.bib` 完整性、working-paper→published |
+| `latex-layout-auditor` | PDF 排版、表列对齐 |
+
+**Stage 2 — 修复**：`prose-polisher`（文字/因果语言）+ `section-drafter`（结构补段）+ `latex-figure-specialist`（表/图）；必要时 orchestrator 用 Bash 重跑 `.do`/`.ipynb` 重估，并据新数字更新表与正文。
+
+**Stage 3 — 验证**：`consistency-checker` + `regression-table-auditor` 复查改动，跑投稿就绪清单。
+
+### 投稿就绪清单
+
+- [ ] 每张表注含 FE、聚类层面、N、星号图例（D7, G4）
+- [ ] 核心系数方向/显著性与项目铁律一致（G5）
+- [ ] 设计禁用的 pre-treatment 单年无显著（G2）
+- [ ] 因果语言与识别强度匹配（G3）
+- [ ] 文献无 working-paper-only（已有发表版）（E3）
+- [ ] AI 写作痕迹审计通过（B8, F2）
+- [ ] 摘要点明核心发现 + 主效应量级（A7）
+- [ ] 命名数据集/方法已引用（E1, E2）
+
+### 用法
+
+```
+/econ prepare this paper for submission
+```
+或自然语言"准备投稿，跑完整审查流水线"。orchestrator 按 SKILL.md playbook 识别并部署三阶段。
+
+---
+
 ## Workflow: Python + Stata + LaTeX
 
 This plugin assumes the standard empirical-economics division of labor:
